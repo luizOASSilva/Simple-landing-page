@@ -13,6 +13,7 @@
 html {
     font-family: 'Open Sans', sans-serif;
     font-size: 62.5%;
+    scroll-behavior: smooth;
 }
 .background-image {
     font-size: 1.6rem;
@@ -23,10 +24,10 @@ html {
 }
 h1, h2, h2, h4, h5, h6 {
     font-family: "Montserrat", serif;
+    text-transform: uppercase;
 }
 h1 {
     font-size: 6rem;
-    text-transform: uppercase;
 }
 h2 {
     font-size: 5.5rem;
@@ -48,21 +49,40 @@ a {
     text-decoration: none;
     color: inherit;
 }
+p {
+    margin-bottom: 3rem;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+table td, table th {
+    padding: 0.75rem;
+    text-align: left;
+    border: 0.1rem solid var(--light-gray-color);
+}
+table tfoot, table th {
+    background: var(--light-gray-color);
+}
+
 .min-height {
     min-height: 100vh;
 }
 .white-background {
     background: var(--white-color);
+    color: var(--primary-color);
+    font-size: 1.6rem;
 }
 .menu {
     border-bottom: 0.1rem solid var(--light-gray-color);
     position: fixed;
     width: 100%;
+    z-index: 1;
 }
 .main-content {
     max-width: 120rem;
     margin: 0 auto;
-    padding: var(--gap);
+    padding: 8rem var(--gap);
 }
 .menu-content {
     display: flex;
@@ -108,13 +128,13 @@ a {
     grid-template-columns: 1fr 1fr;
     gap: var(--gap);
     align-items: center;
-    height: 100vh;
+    min-height: 100vh;
 }
 .intro-text-content, .intro-image-content{
     display: flex;
     flex-flow: column wrap;
     justify-content: center;
-    margin-bottom: 14rem;
+    margin-bottom: 2.5rem;
 }
 .intro-text-content h2 {
     font-size: 8rem;
@@ -124,4 +144,94 @@ a {
     max-width: 100%;
     height: auto;
 }
-
+.top3-content{
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}  
+.text-container {
+    width: 75%;
+} 
+.text-container article {
+    text-align: center;
+}
+.text-container article h2 {
+    margin-bottom: 5rem;
+}
+.top3-grid-content {
+    display: flex;
+    min-height: 100vh;
+    flex-flow: nowrap column;
+    justify-content: center;
+}
+.section-header {
+    margin-bottom: 4rem;
+}
+.section-header h2{
+    margin-bottom: 2rem;
+}
+.grid-content {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--gap);
+    counter-reset: grid-counter;
+}
+.grid-content article h3 {
+    font-size: 3rem;
+    position: relative;
+    padding-left: 6rem;
+    margin-bottom: 3rem;
+}
+.grid-content article h3::before {
+    counter-increment: grid-counter;
+    content: counter(grid-counter);
+    position: absolute;
+    font-size: 8rem;
+    font-style: italic;
+    top: -4rem;
+    left: 0rem;
+    transform: rotate(5deg);
+}
+.gallery-grid-content {
+    display: flex;
+    min-height: 100vh;
+    flex-flow: wrap column;
+    justify-content: center;
+}
+.gallery-image {
+    max-width: 36rem;
+    max-height: 36rem;
+    overflow: hidden;
+}
+.gallery-image img {
+    width: 100%;
+    height: 100%;
+    transition: all 300ms ease-in-out;
+}
+.gallery-image img:hover{
+    transform: translate(-3%, 3%) scale(1.2) rotate(5deg);
+}
+.responsive-table {
+    overflow-y: auto;
+}
+@media (max-width: 800px) {
+    .intro-content {
+        grid-template-columns: 1fr;
+    }
+    .grid-content {
+        grid-template-columns: 1fr;
+    }
+    .gallery-image {
+        max-width: 100%;
+    }
+    .main-content h2 {
+        font-size: 3.5rem;
+    }
+}
+@media (min-width: 0px) and (max-width: 576px) {
+    .main-content h2 {
+        font-size: 3.5rem;
+    }
+}
