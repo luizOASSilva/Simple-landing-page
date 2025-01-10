@@ -3,6 +3,7 @@
     --secondary-color: #5A4ADD;
     --white-color: #FFFFFF;
     --light-gray-color: #EEEEEE;
+    --placeholder-color: #9b9b9b;
     --gap: 3rem;
 }
 * {
@@ -68,7 +69,7 @@ span {
     color: red;
 }
 .min-height {
-    min-height: 10vh;
+    min-height: 5vh;
 }
 .white-background {
     background: var(--white-color);
@@ -212,7 +213,7 @@ span {
     height: 100%;
     transition: all 300ms ease-in-out;
 }
-.gallery-image img:hover{
+.gallery-image img:hover {
     transform: translate(-3%, 3%) scale(1.2) rotate(5deg);
 }
 .responsive-table {
@@ -221,32 +222,14 @@ span {
 .contact-form {
     grid-column: span 2;
 }
-.contact-form form legend{
+.contact-form form legend {
     margin-bottom: 2.5rem;
     font-style: italic;
 }
-.contact-form form fieldset{
+.contact-form form fieldset {
     border: none;
     display: flex;
     flex-flow: nowrap column;
-}
-.form-group{
-    margin-bottom: 2.5rem;
-}
-.form-group input, textarea{
-    width: 100%;
-    margin-top: 0.75rem;
-}
-.form-group input, textarea::placeholder{
-    color: var(--light-gray-color);
-    font-size: 1.5rem;
-    padding-left: 1rem;
-}
-.form-group input{
-    height: 5rem;
-}
-.form-group textarea{
-    height: 12.5rem;
 }
 .contact-form form fieldset legend + div{
     display: inherit;
@@ -255,9 +238,36 @@ span {
 .contact-form form fieldset legend + div > div{
     width: 100%;
 }
+.form-group {
+    margin-bottom: 2.5rem;
+}
+.form-group input, textarea {
+    width: 100%;
+    margin-top: 0.75rem;
+}
+.form-group input, textarea {
+    font-size: 1.5rem;
+    padding-left: 1rem;
+}
+.form-group input {
+    height: 5rem;
+}
+.form-group textarea {
+    height: 12.5rem;
+}
+.form-group input::placeholder {
+    color: var(--light-gray-color);
+    font-weight: 700;
+}
+footer p {
+    margin: 0;
+    padding: var(--gap);
+    text-align: center;
+    font-size: 1.75rem;
+}
 @media (max-width: 800px) {
     .intro-content {
-        grid-template-columns: 1fr !important;
+        grid-template-columns: 1fr;
     }
     .grid-content {
         grid-template-columns: 1fr;
@@ -267,9 +277,6 @@ span {
     }
     .main-content h2 {
         font-size: 3.5rem;
-    }
-    .intro-content {
-        grid-template-columns: 1fr !important;
     }
 }
 @media (min-width: 0px) and (max-width: 576px) {
