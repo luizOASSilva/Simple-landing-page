@@ -3,7 +3,7 @@
     --secondary-color: #5A4ADD;
     --white-color: #FFFFFF;
     --light-gray-color: #EEEEEE;
-    --placeholder-color: #9b9b9b;
+    --placeholder-color: #9b9b9bb4;
     --gap: 3rem;
 }
 * {
@@ -256,8 +256,24 @@ span {
     height: 12.5rem;
 }
 .form-group input::placeholder {
-    color: var(--light-gray-color);
+    color: var(--placeholder-color);
     font-weight: 700;
+}
+.form-group button {
+    width: 24rem;
+    height: 5.5rem;
+    background-color: var(--primary-color);
+    border: 0.3rem solid var(--white-color);
+    color: var(--white-color);
+    border-radius: 0.2rem;
+    font-size: 1.6rem;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 250ms;
+}
+.form-group button:hover{
+    background-color: var(--white-color);
+    color: var(--primary-color);
 }
 footer p {
     margin: 0;
