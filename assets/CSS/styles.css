@@ -64,9 +64,11 @@ table td, table th {
 table tfoot, table th {
     background: var(--light-gray-color);
 }
-
+span {
+    color: red;
+}
 .min-height {
-    min-height: 100vh;
+    min-height: 10vh;
 }
 .white-background {
     background: var(--white-color);
@@ -216,9 +218,46 @@ table tfoot, table th {
 .responsive-table {
     overflow-y: auto;
 }
+.contact-form {
+    grid-column: span 2;
+}
+.contact-form form legend{
+    margin-bottom: 2.5rem;
+    font-style: italic;
+}
+.contact-form form fieldset{
+    border: none;
+    display: flex;
+    flex-flow: nowrap column;
+}
+.form-group{
+    margin-bottom: 2.5rem;
+}
+.form-group input, textarea{
+    width: 100%;
+    margin-top: 0.75rem;
+}
+.form-group input, textarea::placeholder{
+    color: var(--light-gray-color);
+    font-size: 1.5rem;
+    padding-left: 1rem;
+}
+.form-group input{
+    height: 5rem;
+}
+.form-group textarea{
+    height: 12.5rem;
+}
+.contact-form form fieldset legend + div{
+    display: inherit;
+    gap: 2rem;
+}
+.contact-form form fieldset legend + div > div{
+    width: 100%;
+}
 @media (max-width: 800px) {
     .intro-content {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr !important;
     }
     .grid-content {
         grid-template-columns: 1fr;
@@ -228,6 +267,9 @@ table tfoot, table th {
     }
     .main-content h2 {
         font-size: 3.5rem;
+    }
+    .intro-content {
+        grid-template-columns: 1fr !important;
     }
 }
 @media (min-width: 0px) and (max-width: 576px) {
