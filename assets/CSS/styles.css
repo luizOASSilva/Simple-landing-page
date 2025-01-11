@@ -133,7 +133,7 @@ span {
     align-items: center;
     min-height: 100vh;
 }
-.intro-text-content, .intro-image-content{
+.intro-text-content, .intro-image-content {
     display: flex;
     flex-flow: column wrap;
     justify-content: center;
@@ -231,11 +231,11 @@ span {
     display: flex;
     flex-flow: nowrap column;
 }
-.contact-form form fieldset legend + div{
+.contact-form form fieldset legend + div {
     display: inherit;
     gap: 2rem;
 }
-.contact-form form fieldset legend + div > div{
+.contact-form form fieldset legend + div > div {
     width: 100%;
 }
 .form-group {
@@ -262,7 +262,7 @@ span {
 .form-group button {
     width: 24rem;
     height: 5.5rem;
-    background-color: var(--primary-color);
+    background: var(--primary-color);
     border: 0.3rem solid var(--white-color);
     color: var(--white-color);
     border-radius: 0.2rem;
@@ -271,8 +271,8 @@ span {
     font-weight: 600;
     transition: all 250ms;
 }
-.form-group button:hover{
-    background-color: var(--white-color);
+.form-group button:hover {
+    background: var(--white-color);
     color: var(--primary-color);
 }
 footer p {
@@ -281,6 +281,26 @@ footer p {
     text-align: center;
     font-size: 1.75rem;
 }
+.close-menu {
+    display: none;
+}
+.back-to-top {
+    text-align: center;
+    border-radius: 50%;
+    position: fixed;
+    right: 1.5rem;
+    bottom: 1.5rem;
+    background: rgb(0,0,0,0.75);
+    color: var(--light-gray-color);
+    height: 6rem;
+    width: 6rem;
+}
+.back-to-top::after {
+    content: '^';
+    text-align: center;
+    font-size: 5rem;
+}
+    
 @media (max-width: 800px) {
     .intro-content {
         grid-template-columns: 1fr;
@@ -294,9 +314,66 @@ footer p {
     .main-content h2 {
         font-size: 3.5rem;
     }
-}
-@media (min-width: 0px) and (max-width: 576px) {
-    .main-content h2 {
-        font-size: 3.5rem;
+    .menu, .menu-content {
+        justify-content: center;
+        height: 100vh;
+        display: flex;
+        display: none;
+        top: 0;
+        bottom: 0;
     }
+    .menu-content, .menu-content nav ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .menu-content, .menu-content h1 {
+        margin-bottom: var(--gap);
+    }
+    .close-menu-label::after {
+        content: '☰';
+        position: fixed;
+        z-index: 2;
+        top: 2rem;
+        right: 2rem;
+        background: var(--primary-color);
+        color: var(--white-color);
+        font-size: 3rem;
+        line-height: 3rem;
+        height: 3rem;
+        padding: 1rem;
+
+    }
+    .close-menu:checked~.menu {
+        display: block;
+    }
+    .close-menu:checked~.close-menu-label::after {
+        padding: 1rem 1.5rem;
+        content: 'X';
+    }
+    .menu-spacing {
+        height: 0;
+    }
+    .form-group button {
+        width: 100%;
+        margin-bottom: 1.5rem;
+    }
+    .image2 {
+        display: none;
+    }
+}
+@media (min-width: 0px) and (max-width: 245px) {
+    .main-content h2 {
+        font-size: 2rem;
+    }
+    .intro-text-content h2 {
+        font-size: 2rem;
+    }
+    .grid-content article h3 {
+        font-size: 2srem;
+        position: relative;
+        padding-left: 6rem;
+        margin-bottom: 3rem;
+    }
+    
 }
